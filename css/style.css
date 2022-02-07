@@ -2752,8 +2752,11 @@
 }
 
 
-
-
+@media (max-width:500px){
+    .slider-img{
+        height: 50vh !important;
+    }
+}
 
 
 
