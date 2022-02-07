@@ -2751,10 +2751,16 @@
     font-weight: 300;
 }
 
+.header-hide{
+    display: none;
+}
 
 @media (max-width:500px){
     .slider-img{
         height: 50vh !important;
+    }
+    .header-hide{
+        display: block;
     }
 }
 
