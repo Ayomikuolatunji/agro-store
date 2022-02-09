@@ -2814,6 +2814,12 @@
     color: #000;
     font-weight: bolder;
 }
+.breadcrumb{
+    padding: 10px;
+}
+.span9{
+    padding-left: 9px;
+}
 
 
 
