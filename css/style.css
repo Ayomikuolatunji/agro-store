@@ -1247,7 +1247,14 @@
      -ms-transition: all 0.3s ease-out 0.5s;
      transition: all 0.3s ease-out 0.5s;
      text-align: center;
-     display: table;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+.hov-in h4{
+    color: #fff;
+    font-weight: bolder;
 }
  .hov-in a{
      display: table-cell;
@@ -2786,7 +2793,7 @@
     height: 250px;
 }
 .item-sld{
-    border: 1px solid gray;
+    border: 2px solid gray;
 }
 
 
