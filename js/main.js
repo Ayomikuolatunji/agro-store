@@ -3,54 +3,74 @@ const mineral = document.querySelector(".mins")
 const local = document.querySelector(".local")
 const api="https://roi-investment.herokuapp.com/api/v2/products/"
 
-const fetchExportProds=async()=>{
+
+
+const Err=()=>{
+      return exportWrapper.innerHTML=`<div>
+      <h1>Error loading products due network connection</h1>
+  </div>`
+}
+function fetchExportProds(){
+    let loader = `<div class="text-center">
+       <h1 class="text-danger ">Fetching products...</h1>
+  </div>`;
+    exportWrapper.innerHTML = "";
    fetch(api)
    .then(data=>{
       return data.json()
    })
    .then(data=>{
-       const exportProd=data.data.products
-       exportProd.forEach(element => {
-           if(element.product_type==="EXPORT"){
+    if(data.status==="success"){
+        loader=""
+        exportWrapper.innerHTML = loader;
+        const exportProd=data.data.products
+        exportProd.forEach(element => {
+       if(element.product_type==="EXPORT"){
+        if(element){
+          return  exportWrapper.innerHTML+=`<div class="col-lg-3 col-md-4 col-6 col-6 mt-4">
+            <section class="panel">
+                <div class="pro-img-box">
+                    <img src=${element.imgUrl} alt=api />
+                </div>
 
-            if(element){
-              return  exportWrapper.innerHTML+=`<div class="col-lg-3 col-md-4 col-6 col-6 mt-4">
-                <section class="panel">
-                    <div class="pro-img-box">
-                        <img src=${element.imgUrl} alt=api />
-                    </div>
- 
-                    <div class="panel-body text-center">
-                        <h4>
-                            <a href="#" class="pro-title">
-                               ${element.product_name}
-                            </a>
-                        </h4>
-                        <p class="price"><a href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20kernel%20oil%20exportation">Contact supplier</a></p>
-                    </div>
-                </section>
-            </div>`
-            } 
-             return exportWrapper.innerHTML=`<div>
-                <h1>No product added yet</h1>
-            </div>`
-           }
-       });
-
+                <div class="panel-body text-center">
+                    <h4>
+                        <a href="#" class="pro-title">
+                           ${element.product_name}
+                        </a>
+                    </h4>
+                    <p class="price"><a href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20kernel%20oil%20exportation">Contact supplier</a></p>
+                </div>
+            </section>
+        </div>`
+        } 
+         return exportWrapper.innerHTML=`<div>
+            <h1>No product added yet</h1>
+        </div>`
+       }
+    });
+       }
    })
    .catch(err=>{
        console.log(err)
+        return Err()
    })
 }
 
 fetchExportProds()
-
+// fetch mineral rescources
 const fetchMineralProds=async()=>{
+    let loader = `<div class="clearfix">
+    <h1 class="text-danger ">Fetching products...</h1>
+  </div>`;
+    mineral.innerHTML=""
     fetch(api)
     .then(data=>{
        return data.json()
     })
     .then(data=>{
+        loader ="";
+        mineral.innerHTML=loader
         const exportProd=data.data.products
         const fil=exportProd.filter(prod=>{
             if(prod.product_type==="MINERAL"){
@@ -59,7 +79,7 @@ const fetchMineralProds=async()=>{
         })
         fil.forEach(pro=>{
             mineral.innerHTML+=`
-            <div class="col-lg-3 col-md-6 special-grid mineral-rescources min">
+            <div class="col-lg-3 col-md-6 special-grid mineral-rescources col-6">
             <div class="products-single fix">
                 <div class="box-img-hover">
                     <div class="type-lb">
@@ -91,11 +111,16 @@ const fetchMineralProds=async()=>{
  fetchMineralProds()
 
  const fetchLocalProds=async()=>{
+    let loader = `<div class="clearfix">
+    <h1 class="text-danger ">Fetching products...</h1>
+  </div>`;
+    local.innerHTML=loader
     fetch(api)
     .then(data=>{
        return data.json()
     })
     .then(data=>{
+        local.innerHTML=""
         const exportProd=data.data.products
         const fil=exportProd.filter(prod=>{
             if(prod.product_type==="LOCAL"){
@@ -104,6 +129,7 @@ const fetchMineralProds=async()=>{
         })
         fil.forEach(pro=>{
             local.innerHTML+=`
+            <div class="col-lg-3 col-md-6 special-grid mineral-rescources col-6">
             <div class="products-single fix">
                 <div class="box-img-hover">
                     <div class="type-lb">
@@ -123,6 +149,7 @@ const fetchMineralProds=async()=>{
                     <h4>${pro.product_name}</h4>
                 </div>
             </div>  
+            </div>
             `
         })
     })
