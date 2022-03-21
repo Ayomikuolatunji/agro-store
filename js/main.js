@@ -12,7 +12,7 @@ const fetchProduct=async()=>{
            if(element.product_type==="EXPORT"){
             console.log(element)
             if(element){
-              return  exportWrapper.innerHTML+=`<div class="col-lg-3 col-md-4 col-6 col-6">
+              return  exportWrapper.innerHTML+=`<div class="col-lg-3 col-md-4 col-6 col-6 mt-4">
                 <section class="panel">
                     <div class="pro-img-box">
                         <img src=${element.imgUrl} alt="" />
