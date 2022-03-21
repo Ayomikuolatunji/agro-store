@@ -1,9 +1,10 @@
 const exportWrapper = document.querySelector(".export")
-const mineral = document.querySelector(".min")
+const mineral = document.querySelector(".mins")
 const local = document.querySelector(".local")
+const api="https://roi-investment.herokuapp.com/api/v2/products/"
 
 const fetchExportProds=async()=>{
-   fetch("http://localhost:5000/api/v2/products/")
+   fetch(api)
    .then(data=>{
       return data.json()
    })
@@ -16,7 +17,7 @@ const fetchExportProds=async()=>{
               return  exportWrapper.innerHTML+=`<div class="col-lg-3 col-md-4 col-6 col-6 mt-4">
                 <section class="panel">
                     <div class="pro-img-box">
-                        <img src=${element.imgUrl} alt="" />
+                        <img src=${element.imgUrl} alt=api />
                     </div>
  
                     <div class="panel-body text-center">
@@ -45,7 +46,7 @@ const fetchExportProds=async()=>{
 fetchExportProds()
 
 const fetchMineralProds=async()=>{
-    fetch("http://localhost:5000/api/v2/products/")
+    fetch(api)
     .then(data=>{
        return data.json()
     })
@@ -58,6 +59,7 @@ const fetchMineralProds=async()=>{
         })
         fil.forEach(pro=>{
             mineral.innerHTML+=`
+            <div class="col-lg-3 col-md-6 special-grid mineral-rescources min">
             <div class="products-single fix">
                 <div class="box-img-hover">
                     <div class="type-lb">
@@ -76,7 +78,8 @@ const fetchMineralProds=async()=>{
                 <div class="why-text">
                     <h4>${pro.product_name}</h4>
                 </div>
-            </div>  
+            </div>        
+     </div>
             `
         })
     })
@@ -88,7 +91,7 @@ const fetchMineralProds=async()=>{
  fetchMineralProds()
 
  const fetchLocalProds=async()=>{
-    fetch("http://localhost:5000/api/v2/products/")
+    fetch(api)
     .then(data=>{
        return data.json()
     })
