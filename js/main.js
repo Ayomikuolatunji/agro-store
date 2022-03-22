@@ -42,7 +42,7 @@ function fetchExportProds(){
                            ${element.product_name}
                         </a>
                     </h4>
-                    <p class="price"><a href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20kernel%20oil%20exportation">Contact supplier</a></p>
+                    <p class="price"><a href=""https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20${element.product_name}">Contact supplier</a></p>
                 </div>
             </section>
         </div>`
@@ -95,7 +95,7 @@ const fetchMineralProds=async()=>{
                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                         </ul>
-                        <a class="cart" href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20Charcoal%20supply">Contact supplier</a>
+                        <a class="cart" href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20${pro.product_name}">Contact supplier</a>
                     </div>
                 </div>
                 <div class="why-text">
@@ -148,7 +148,7 @@ const fetchMineralProds=async()=>{
                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                         </ul>
-                        <a class="cart" href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20Charcoal%20supply">Contact supplier</a>
+                        <a class="cart" href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20${pro.product_name}">Contact supplier</a>
                     </div>
                 </div>
                 <div class="why-text">
