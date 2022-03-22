@@ -183,7 +183,7 @@ const fetchMineralProds=async()=>{
             if(pro.product_type==="ESTATE"){
                 console.log(pro)
                 realEstate.innerHTML+=`
-            <div class="col-md-6 col-lg-4 col-xl-4 col-6">
+            <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="blog-box">
                         <div class="blog-img">
                             <img class="img-fluid" src=${pro.imgUrl} alt="" />
@@ -196,7 +196,7 @@ const fetchMineralProds=async()=>{
                             <ul class="option-blog">
                                 <li><a href="#"><i class="far fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="https://api.whatsapp.com/send?phone=+2349122170827&text="I want to make enquire about ${pro.product_name}"><i class="far fa-comments"></i></a></li>
+                                <li><a href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20${pro.product_name}"><i class="far fa-comments"></i></a></li>
                             </ul>
                         </div>
                     </div>
