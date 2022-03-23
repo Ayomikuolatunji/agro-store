@@ -42,7 +42,7 @@ function fetchExportProds(){
                            ${element.product_name}
                         </a>
                     </h4>
-                    <p class="price"><a href=""https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20${element.product_name}">Contact supplier</a></p>
+                    <p class="price"><a href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20${element.product_name}">Contact supplier</a></p>
                 </div>
             </section>
         </div>`
