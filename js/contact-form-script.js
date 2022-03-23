@@ -6,33 +6,33 @@ $("#contactForm").validator().on("submit", function (event) {
     } else {
         // everything looks good!
         event.preventDefault();
-        submitForm();
+        submitForm(event);
     }
 });
 
-
-function submitForm(){
+function submitForm(event){
     // Initiate Variables With Form Content
     var name = $("#name").val();
     var email = $("#email").val();
     var msg_subject = $("#msg_subject").val();
     var message = $("#message").val();
-
-
-    $.ajax({
-        type: "POST",
-        url: "php/form-process.php",
-        data: "name=" + name + "&email=" + email + "&msg_subject=" + msg_subject + "&message=" + message,
-        success : function(text){
-            if (text == "success"){
-                formSuccess();
-            } else {
-                formError();
-                submitMSG(false,text);
-            }
-        }
-    });
-}
+    console.log(name,email,msg_subject,message)
+    var templateParams = {
+        from_name: name,
+        to_name: "ayomikuolatunji",
+        from_email: email,
+        intention_subject: msg_subject,
+        message: message,
+    };
+    emailjs.init("u6_pLNJ-ttEYXdYpw");
+    emailjs.send('service_873gvrc', 'template_v53fuoe', templateParams)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });   
+    // service id service_akz9ybpForms");
+ }
 
 function formSuccess(){
     $("#contactForm")[0].reset();
