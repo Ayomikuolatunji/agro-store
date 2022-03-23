@@ -194,9 +194,9 @@ const fetchMineralProds=async()=>{
                                 <p>${pro.desc}</p>
                             </div>
                             <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20${pro.product_name}"><i class="far fa-comments"></i></a></li>
+                            <p class="price"><a href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20${element.product_name}">Contact supplier</a>
+                            </p>
+                            </div>
                             </ul>
                         </div>
                     </div>
