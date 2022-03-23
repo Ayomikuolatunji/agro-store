@@ -2,7 +2,7 @@ const exportWrapper = document.querySelector(".export")
 const mineral = document.querySelector(".mins")
 const local = document.querySelector(".local")
 const realEstate=document.querySelector(".estate")
-const api="https://roi-investment.herokuapp.com/api/v2/products/"
+const api="http://localhost:5000/api/v2/products/"
 
 
 
@@ -183,10 +183,10 @@ const fetchMineralProds=async()=>{
             if(pro.product_type==="ESTATE"){
                 console.log(pro)
                 realEstate.innerHTML+=`
-            <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="col-md-6 col-lg-3 col-xl-3">
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img class="img-fluid" src=${pro.imgUrl} alt="" />
+                            <img class="img-fluid estate-height" src=${pro.imgUrl} alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
@@ -194,7 +194,7 @@ const fetchMineralProds=async()=>{
                                 <p>${pro.desc}</p>
                             </div>
                             <ul class="option-blog">
-                            <p class="price"><a href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20${element.product_name}">Contact supplier</a>
+                            <p class="agent"><a href="https://api.whatsapp.com/send?phone=+2349122170827&text=I%20want%20to%20enquires%20about%20${pro.product_name}">Contact Agent</a>
                             </p>
                             </div>
                             </ul>

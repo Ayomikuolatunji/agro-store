@@ -2821,9 +2821,20 @@
     padding-left: 9px;
 }
 
+/* estate height */
+.estate-height{
+    height: 260px;
+}
 
-
-
+.agent{
+    display: block;
+    background: #000;
+    padding: 3px;
+}
+.agent a{
+    color: #fff;
+    font-size: 18px;
+}
 
 
 
