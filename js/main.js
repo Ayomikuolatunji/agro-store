@@ -2,7 +2,7 @@ const exportWrapper = document.querySelector(".export")
 const mineral = document.querySelector(".mins")
 const local = document.querySelector(".local")
 const realEstate=document.querySelector(".estate")
-const api="http://localhost:5000/api/v2/products/"
+const api="https://roi-investment.herokuapp.com/api/v2/products/"
 
 
 

@@ -1,3 +1,5 @@
+const api="https://roi-investment.herokuapp.com/api/v2/products/"
+
 const mineral = document.querySelector(".mins")
 
 // fetch mineral rescources api function call 
